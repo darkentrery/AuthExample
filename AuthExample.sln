@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthExample", "AuthExample\AuthExample.csproj", "{FBF6A600-64E8-442D-A09B-E83FA7CBC8AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25C1C7EB-C70C-49B1-BF74-FAA7B2D2D710}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBF6A600-64E8-442D-A09B-E83FA7CBC8AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF6A600-64E8-442D-A09B-E83FA7CBC8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF6A600-64E8-442D-A09B-E83FA7CBC8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF6A600-64E8-442D-A09B-E83FA7CBC8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
