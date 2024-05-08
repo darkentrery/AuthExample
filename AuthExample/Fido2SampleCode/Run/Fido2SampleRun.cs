@@ -72,13 +72,27 @@ namespace AuthExample.Fido2SampleCode.Run
                 // inserted. If so, keep using it. If not, find another default.
                 // does not require a chosen YubiKey, this method will do nothing
                 // and return true.
-                if (DefaultChooseYubiKey(menuItem))
+                Console.WriteLine("Menu item " + menuItem.ToString());
+                if (menuItem == Fido2MainMenuItem.GetUser)
                 {
-                    if (!RunMenuItem(menuItem))
-                    {
-                        menuItem = Fido2MainMenuItem.Exit;
-                    }
+                    User user = new User("John", "Duglas");
+                    user.PrintUser();
+                } else if (menuItem == Fido2MainMenuItem.InputPassword)
+                {
+                    Console.Write("Input password: ");
+                    string password = Console.ReadLine();
+                    User user = new User("John", "Duglas");
+                    user.Password = password;
+                    user.PrintUser();
                 }
+                // if (DefaultChooseYubiKey(menuItem))
+                // {
+                //     Console.WriteLine("Menu item " + menuItem);
+                //     // if (!RunMenuItem(menuItem))
+                //     // {
+                //     //     menuItem = Fido2MainMenuItem.Exit;
+                //     // }
+                // }
 
             } while (menuItem != Fido2MainMenuItem.Exit);
         }
@@ -88,28 +102,28 @@ namespace AuthExample.Fido2SampleCode.Run
         // return true.
         // If the menuItem is Exit or NoItem or ListYubiKeys (or something
         // similar), don't choose, just return true.
-        private bool DefaultChooseYubiKey(Fido2MainMenuItem menuItem)
-        {
-            switch (menuItem)
-            {
-                case Fido2MainMenuItem.ListYubiKeys:
-                case Fido2MainMenuItem.ChooseYubiKey:
-                case Fido2MainMenuItem.Exit:
-                    return true;
-
-                default:
-                    if (_chosenByUser)
-                    {
-                        return true;
-                    }
-
-                    return ChooseYubiKey.RunChooseYubiKey(
-                        false,
-                        _menuObject,
-                        Transport.HidFido,
-                        ref _yubiKeyChosen);
-            }
-        }
+        // private bool DefaultChooseYubiKey(Fido2MainMenuItem menuItem)
+        // {
+        //     switch (menuItem)
+        //     {
+        //         case Fido2MainMenuItem.ListYubiKeys:
+        //         case Fido2MainMenuItem.ChooseYubiKey:
+        //         case Fido2MainMenuItem.Exit:
+        //             return true;
+        //
+        //         default:
+        //             if (_chosenByUser)
+        //             {
+        //                 return true;
+        //             }
+        //
+        //             return ChooseYubiKey.RunChooseYubiKey(
+        //                 false,
+        //                 _menuObject,
+        //                 Transport.HidFido,
+        //                 ref _yubiKeyChosen);
+        //     }
+        // }
 
         // Run this method if the caller has chosen the menu item ChooseYubiKey.
         private bool RunChooseYubiKey()

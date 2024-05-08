@@ -21,13 +21,13 @@ namespace AuthExample.Fido2SampleCode.Run
     {
         public bool RunMenuItem(Fido2MainMenuItem menuItem)
         {
-            if (menuItem >= Fido2MainMenuItem.MakeCredential
-                && menuItem < Fido2MainMenuItem.Reset)
-            {
-                SampleMenu.WriteMessage(
-                    MessageType.Title, 0,
-                    "\n---This sample uses the SDK's automatic authentication (see the User's Manual)---\n");
-            }
+            // if (menuItem >= Fido2MainMenuItem.MakeCredential
+            //     && menuItem < Fido2MainMenuItem.Reset)
+            // {
+            //     SampleMenu.WriteMessage(
+            //         MessageType.Title, 0,
+            //         "\n---This sample uses the SDK's automatic authentication (see the User's Manual)---\n");
+            // }
 
             return menuItem switch
             {
@@ -36,28 +36,28 @@ namespace AuthExample.Fido2SampleCode.Run
                 // over the HID FIDO protocol. This is the protocol used to
                 // communicate with the Fido2 application.
                 // Using Transport.HidFido finds all YubiKeys connected via USB.
-                Fido2MainMenuItem.ListYubiKeys => ListYubiKeys.RunListYubiKeys(Transport.HidFido),
-                Fido2MainMenuItem.ChooseYubiKey => RunChooseYubiKey(),
-                Fido2MainMenuItem.SetPin => RunSetPin(),
-                Fido2MainMenuItem.ChangePin => RunChangePin(),
-                Fido2MainMenuItem.VerifyPin => RunVerifyPin(),
-                Fido2MainMenuItem.VerifyUv => RunVerifyUv(),
-                Fido2MainMenuItem.MakeCredential => RunMakeCredential(),
-                Fido2MainMenuItem.GetAssertion => RunGetAssertions(),
-                Fido2MainMenuItem.ListCredentials => RunListCredentials(),
-                Fido2MainMenuItem.UpdateCredentialUserInfo => RunUpdateCredentialUserInfo(),
-                Fido2MainMenuItem.DeleteCredential => RunDeleteCredential(),
-                Fido2MainMenuItem.RetrieveLargeBlobData => RunRetrieveLargeBlobData(),
-                Fido2MainMenuItem.StoreLargeBlobData => RunStoreLargeBlobData(),
-                Fido2MainMenuItem.DeleteLargeBlobData => RunDeleteLargeBlobData(),
-                Fido2MainMenuItem.GetBioInfo => RunGetBioInfo(),
-                Fido2MainMenuItem.EnrollFingerprint => RunEnrollFingerprint(),
-                Fido2MainMenuItem.SetBioTemplateFriendlyName => RunSetBioTemplateFriendlyName(),
-                Fido2MainMenuItem.RemoveBioEnrollment => RunRemoveBioEnrollment(),
-                Fido2MainMenuItem.EnableEnterpriseAttestation => RunEnableEnterpriseAttestation(),
-                Fido2MainMenuItem.ToggleAlwaysUv => RunToggleAlwaysUv(),
-                Fido2MainMenuItem.SetPinConfig => RunSetPinConfig(),
-                Fido2MainMenuItem.Reset => RunReset(),
+                // Fido2MainMenuItem.ListYubiKeys => ListYubiKeys.RunListYubiKeys(Transport.HidFido),
+                // Fido2MainMenuItem.ChooseYubiKey => RunChooseYubiKey(),
+                // Fido2MainMenuItem.SetPin => RunSetPin(),
+                // Fido2MainMenuItem.ChangePin => RunChangePin(),
+                // Fido2MainMenuItem.VerifyPin => RunVerifyPin(),
+                // Fido2MainMenuItem.VerifyUv => RunVerifyUv(),
+                // Fido2MainMenuItem.MakeCredential => RunMakeCredential(),
+                // Fido2MainMenuItem.GetAssertion => RunGetAssertions(),
+                // Fido2MainMenuItem.ListCredentials => RunListCredentials(),
+                // Fido2MainMenuItem.UpdateCredentialUserInfo => RunUpdateCredentialUserInfo(),
+                // Fido2MainMenuItem.DeleteCredential => RunDeleteCredential(),
+                // Fido2MainMenuItem.RetrieveLargeBlobData => RunRetrieveLargeBlobData(),
+                // Fido2MainMenuItem.StoreLargeBlobData => RunStoreLargeBlobData(),
+                // Fido2MainMenuItem.DeleteLargeBlobData => RunDeleteLargeBlobData(),
+                // Fido2MainMenuItem.GetBioInfo => RunGetBioInfo(),
+                // Fido2MainMenuItem.EnrollFingerprint => RunEnrollFingerprint(),
+                // Fido2MainMenuItem.SetBioTemplateFriendlyName => RunSetBioTemplateFriendlyName(),
+                // Fido2MainMenuItem.RemoveBioEnrollment => RunRemoveBioEnrollment(),
+                // Fido2MainMenuItem.EnableEnterpriseAttestation => RunEnableEnterpriseAttestation(),
+                // Fido2MainMenuItem.ToggleAlwaysUv => RunToggleAlwaysUv(),
+                // Fido2MainMenuItem.SetPinConfig => RunSetPinConfig(),
+                // Fido2MainMenuItem.Reset => RunReset(),
                 _ => RunUnimplementedOperation(),
             };
         }

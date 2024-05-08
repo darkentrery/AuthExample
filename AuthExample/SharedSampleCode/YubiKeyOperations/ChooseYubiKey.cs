@@ -41,6 +41,7 @@ namespace AuthExample.SharedSampleCode.YubiKeyOperations
             }
 
             // Find all currently connected YubiKeys.
+
             IEnumerable<IYubiKeyDevice> yubiKeyEnumerable = YubiKeyDevice.FindByTransport(transport);
             IYubiKeyDevice[] yubiKeyArray = yubiKeyEnumerable.ToArray();
 
