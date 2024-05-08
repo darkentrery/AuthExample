@@ -5,10 +5,12 @@ namespace AuthExample.Connections;
 public class Connection : IConnection
 {
     private bool _isConnect;
+    private string _host;
 
     public Connection(string host)
     {
         this._isConnect = true;
+        this._host = host;
     }
 
     public Connection()

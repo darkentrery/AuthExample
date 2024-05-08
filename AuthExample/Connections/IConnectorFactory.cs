@@ -3,5 +3,5 @@
 public interface IConnectorFactory
 {
     public Connection GetConnection();
-    public void ShowFeatures();
+    public ConnectionOptions GetFeatures();
 }

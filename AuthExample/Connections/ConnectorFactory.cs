@@ -51,10 +51,8 @@ public class ConnectorFactory : IConnectorFactory
         return new Connection();
     }
 
-    public void ShowFeatures()
+    public ConnectionOptions GetFeatures()
     {
-        Console.WriteLine("Use flag `--host` and write host after that for emulation connect");
-        Console.WriteLine("Use flag `--fail` for emulation fail connect");
-        Console.WriteLine("Use flag `--features` for show features");
+        return new ConnectionOptions();
     }
 }

@@ -23,7 +23,13 @@ class Program
             // Console.WriteLine(e);
             // throw;
         }
+        
+        ConnectionOptions options = connectorFactory.GetFeatures();
+        options.PrintOptions();
 
+        
+        
+        
 //         if (args.Length != 0)
 //         {
 //             useGui = args[0].Equals("g", StringComparison.OrdinalIgnoreCase);
