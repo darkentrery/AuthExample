@@ -75,13 +75,13 @@ namespace AuthExample.Fido2SampleCode.Run
                 Console.WriteLine("Menu item " + menuItem.ToString());
                 if (menuItem == Fido2MainMenuItem.GetUser)
                 {
-                    User user = new User("John", "Duglas");
+                    UserInfo user = new UserInfo("John", "Duglas");
                     user.PrintUser();
                 } else if (menuItem == Fido2MainMenuItem.InputPassword)
                 {
                     Console.Write("Input password: ");
                     string password = Console.ReadLine();
-                    User user = new User("John", "Duglas");
+                    UserInfo user = new UserInfo("John", "Duglas");
                     user.Password = password;
                     user.PrintUser();
                 }

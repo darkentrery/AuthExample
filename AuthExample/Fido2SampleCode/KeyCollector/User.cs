@@ -1,12 +1,12 @@
 ﻿namespace AuthExample.Fido2SampleCode.KeyCollector;
 
-public class User
+public class UserInfo
 {
     public string name;
     public string lastName;
     // public string password;
 
-    public User(string name, string lastName)
+    public UserInfo(string name, string lastName)
     {
         this.name = name;
         this.lastName = lastName;
@@ -17,6 +17,5 @@ public class User
     {
         Console.WriteLine("Name: " + this.name);
         Console.WriteLine("Last Name: " + this.lastName);
-        Console.WriteLine("Password: " + this.Password);
     }
 }
